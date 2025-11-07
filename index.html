@@ -760,9 +760,9 @@
             <div class="hero-layout">
                 <div class="hero-text">
                     <h1>Arrive. Settle. Thrive.</h1>
-                    <p>Moving to a new country, especially if you don't speak the language, can be overwhelming. We're here to help expats settle into Ningbo with confidence, giving you the support, connections, and local knowledge you need to truly nest here.</p>
-                    <p><strong>No hidden costs. No commissions. No strings attached.</strong> We work for you, helping you find the most cost-effective solutions because your trust matters more than quick profits.</p>
-                    <a href="#contact" class="btn">Start Settling In</a>
+                    <p>Moving to a new country can be overwhelming — especially when you don’t speak the language. Nest helps expats settle into Ningbo with confidence, giving you the support, connections, and local know-how to feel at home faster.</p>
+                    <p><strong>No hidden costs. No commissions. No strings attached.</strong> We help you cut through the confusion, save money, and settle smarter — with local insights you can trust.</p>
+                    <a href="#contact" class="btn">Be part of the Pilot</a>
                 </div>
                 <div class="hero-image">
                     <img src="Nest-Headline.jpg" alt="Nest welcome image">
@@ -862,6 +862,7 @@
         <div class="pricing-intro">
             <h2>Simple, Transparent Pricing</h2>
             <p>One membership. All the support you need to settle into Ningbo.</p>
+            <p>Pilot members get their first month free, then 100 RMB/month — cancel anytime.</p>
         </div>
         
         <div class="pricing-content">
@@ -875,7 +876,7 @@
             </div>
             
             <div class="pricing-actions">
-                <a href="#contact" class="btn">Join Nest Today</a>
+                <a href="#contact" class="btn">Join the Pilot - First Month Free</a>
             </div>
             
             <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--accent);">
@@ -993,41 +994,56 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="about" id="contact">
-        <div class="container">
-            <div class="about-layout">
-                <div class="about-image">
-                    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="400" height="400" fill="#e8f4ef"/>
-                        <!-- Large welcoming nest -->
-                        <ellipse cx="200" cy="220" rx="140" ry="90" fill="none" stroke="#2c5f4f" stroke-width="6"/>
-                        <path d="M60 220 Q50 200, 60 180 Q70 165, 85 175" fill="none" stroke="#2c5f4f" stroke-width="4"/>
-                        <path d="M340 220 Q350 200, 340 180 Q330 165, 315 175" fill="none" stroke="#2c5f4f" stroke-width="4"/>
-                        
-                        <!-- Welcoming birds -->
-                        <path d="M100 120 Q110 110, 120 120 M100 120 Q90 110, 80 120" stroke="#2c5f4f" stroke-width="3" fill="none"/>
-                        <path d="M300 120 Q310 110, 320 120 M300 120 Q290 110, 280 120" stroke="#2c5f4f" stroke-width="3" fill="none"/>
-                        
-                        <!-- Heart in center -->
-                        <path d="M180 200 Q180 185, 195 185 Q210 185, 210 200 Q210 185, 225 185 Q240 185, 240 200 L210 235 Z" fill="#2c5f4f" opacity="0.3"/>
-                        
-                        <text x="200" y="320" font-family="Arial" font-size="28" text-anchor="middle" fill="#2c5f4f" font-weight="bold">Welcome Home</text>
-                    </svg>
+   <!-- Contact Section -->
+<section class="about" id="contact">
+    <div class="container">
+        <div class="about-text" style="max-width: 600px; margin: 0 auto;">
+            <h2>Ready to Settle Into Ningbo?</h2>
+            <p>We're here to make your transition to Ningbo as smooth and stress-free as possible. Fill out the form below and we'll get back to you within 24 hours!</p>
+            
+            <form name="contact" method="POST" data-netlify="true" style="max-width: 500px; margin-top: 2rem;">
+                <input type="hidden" name="form-name" value="contact">
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary);">Name *</label>
+                    <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--accent); border-radius: 5px; font-size: 1rem;">
                 </div>
-                <div class="about-text">
-                    <h2>Ready to Settle Into Ningbo?</h2>
-                    <p>We're here to make your transition to Ningbo as smooth and stress-free as possible. Whether you're arriving next week or you've been here for a while and need extra support, Nest is ready to help you feel at home.</p>
-                    <p><strong>Get in touch today and let's start your journey to feeling truly settled in Ningbo.</strong></p>
-                    <p style="margin-top: 2rem;">
-                        <strong>WeChat:</strong> [Your WeChat ID]<br>
-                        <strong>Email:</strong> hello@nestnb.com<br>
-                        <strong>Location:</strong> Ningbo, Zhejiang Province
-                    </p>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary);">Email *</label>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--accent); border-radius: 5px; font-size: 1rem;">
                 </div>
-            </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="wechat" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary);">WeChat ID</label>
+                    <input type="text" id="wechat" name="wechat" style="width: 100%; padding: 0.75rem; border: 2px solid var(--accent); border-radius: 5px; font-size: 1rem;">
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary);">Are you living in Ningbo yet? *</label>
+                    <div style="display: flex; gap: 1.5rem;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <input type="radio" name="in-ningbo" value="yes" required style="width: 18px; height: 18px; cursor: pointer;">
+                            <span>Yes</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <input type="radio" name="in-ningbo" value="no" required style="width: 18px; height: 18px; cursor: pointer;">
+                            <span>No, arriving soon</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn" style="width: 100%; cursor: pointer;">Send Message</button>
+            </form>
+            
+            <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--dark);">
+                <strong>Or reach us directly:</strong><br>
+                <strong>Email:</strong> hello@nestnb.com<br>
+                <strong>Location:</strong> Ningbo, Zhejiang Province
+            </p>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
