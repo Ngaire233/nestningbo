@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nest | Arrive. Settle. Thrive.</title>
+    <title>Nest | I Love Moving. You Don't Have To.</title>
     <style>
         /* Global Styles */
         :root {
@@ -83,11 +83,11 @@
         }
 
         header {
-        transition-delay: 0s; /* No delay when shrinking */
+            transition-delay: 0s;
         }
     
         header:not(.shrunk) {
-        transition-delay: 0.3s; /* Small delay when expanding back */
+            transition-delay: 0.3s;
         }
         
         .header-content {
@@ -112,14 +112,14 @@
             transform: scale(1.02);
         }
             
-          .logo a img {
-        width: 240px;
-        height: auto;
-        transition: width 0.3s ease;
+        .logo a img {
+            width: 240px;
+            height: auto;
+            transition: width 0.3s ease;
         }
     
         header.shrunk .logo a img {
-        width: 120px;
+            width: 120px;
         }
             
         .hamburger {
@@ -278,8 +278,9 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 2rem;
+            max-width: 1200px;
         }
         
         .service-card {
@@ -312,33 +313,49 @@
             transition-delay: 0.3s;
         }
         
-        .service-card:nth-child(3) {
-            transition-delay: 0.5s;
-        }
-        
-        .service-card:nth-child(4) {
-            transition-delay: 0.7s;
-        }
-        
-        .service-card:nth-child(5) {
-            transition-delay: 0.9s;
-        }
-        
-        .service-card:nth-child(6) {
-            transition-delay: 1.1s;
-        }
-        
         .service-card h3 {
             margin-top: 1rem;
+            margin-bottom: 1rem;
         }
         
-         .service-icon {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 1rem;
-        fill: var(--primary);
-        color: var(--primary);
-        font-size: 60px;
+        .service-card h4 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+            fill: var(--primary);
+            color: var(--primary);
+            font-size: 60px;
+        }
+        
+        /* Service List Styling */
+        .service-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0;
+        }
+
+        .service-list li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .service-list li:before {
+            content: "•";
+            color: var(--primary);
+            font-size: 1.2em;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: -2px;
         }
         
         /* Pricing Section */
@@ -361,124 +378,41 @@
             margin: 0 auto;
         }
         
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 2rem;
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
         }
         
-        .pricing-rate {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .pricing-highlight {
+        .pricing-item {
             background-color: var(--light);
             padding: 1.5rem;
             border-radius: 10px;
-            margin: 1.5rem 0;
             border-left: 4px solid var(--primary);
-            text-align: center;
         }
         
-        .pricing-highlight p {
-            margin: 0;
+        .pricing-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-item .price {
+            font-size: 1.5rem;
             font-weight: bold;
             color: var(--primary);
-            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-item p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: var(--dark);
         }
         
         .pricing-cta {
             text-align: center;
             margin: 2rem 0;
-        }
-        
-        .pricing-actions {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
-        
-        .show-details-btn {
-            background-color: transparent;
-            color: var(--primary);
-            padding: 12px 24px;
-            border: 2px solid var(--primary);
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.95rem;
-        }
-        
-        .show-details-btn:hover {
-            background-color: var(--primary);
-            color: var(--light);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(44, 95, 79, 0.2);
-        }
-        
-        .show-details-btn.expanded {
-            background-color: var(--accent);
-            color: var(--primary);
-            border-color: var(--accent);
-        }
-        
-        .details-icon {
-            transition: transform 0.3s ease;
-        }
-        
-        .show-details-btn.expanded .details-icon {
-            transform: rotate(180deg);
-        }
-        
-        .pricing-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-            background-color: var(--light);
-            border-radius: 10px;
-            margin-top: 1rem;
-        }
-        
-        .pricing-details.expanded {
-            max-height: 1500px;
-            padding: 2rem;
-            border-top: 2px solid var(--accent);
-            margin-top: 2rem;
-        }
-        
-        .pricing-details h4 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .pricing-details ul {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 2rem;
-        }
-        
-        .pricing-details li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        
-        .pricing-details li::before {
-            content: "•";
-            color: var(--primary);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
         }
         
         /* FAQ Section */
@@ -599,23 +533,6 @@
             min-width: 200px;
         }
         
-        .footer-logo svg {
-            width: 150px;
-            height: auto;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-logo svg circle,
-        .footer-logo svg rect,
-        .footer-logo svg path {
-            stroke: #ffffff;
-            fill: #ffffff;
-        }
-        
-        .footer-logo svg text {
-            fill: #ffffff;
-        }
-        
         .footer-links, 
         .footer-contact {
             flex: 1;
@@ -656,7 +573,7 @@
         
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .logo svg {
+            .logo a img {
                 width: 140px;
             }
             
@@ -664,7 +581,7 @@
                 padding: 0.25rem 0;
             }
             
-            header.shrunk .logo svg {
+            header.shrunk .logo a img {
                 width: 80px;
             }
             
@@ -696,28 +613,17 @@
                 margin: 0 auto;
             }
             
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .pricing-content {
                 padding: 2rem;
                 margin: 0 1rem;
-                text-align: left;
-            }
-            
-            .pricing-header {
-                text-align: left;
-            }
-            
-            .pricing-rate {
-                font-size: 2rem;
-            }
-            
-            .pricing-highlight {
-                text-align: left;
-            }
-            
-            .pricing-actions {
-                flex-direction: column;
-                gap: 1rem;
-                align-items: flex-start;
             }
             
             .faq-question {
@@ -730,13 +636,13 @@
 </head>
 <body id="top">
     <!-- Header -->
-   <header>
-    <div class="container header-content">
-        <div class="logo">
-    <a href="#top" aria-label="Nest - Go to top">
-       <img src="nest-logo.png" alt="Nest Logo">
-    </a>
-</div>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="#top" aria-label="Nest - Go to top">
+                    <img src="nest-logo.png" alt="Nest Logo">
+                </a>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -746,7 +652,7 @@
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#pricing">Membership</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#FAQ">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -759,10 +665,9 @@
         <div class="container">
             <div class="hero-layout">
                 <div class="hero-text">
-                    <h1>Arrive. Settle. Thrive.</h1>
-                    <p>Moving to a new country can be overwhelming — especially when you don’t speak the language. Nest helps expats settle into Ningbo with confidence, giving you the support, connections, and local know-how to feel at home faster.</p>
-                    <p><strong>No hidden costs. No commissions. No strings attached.</strong> We help you cut through the confusion, save money, and settle smarter — with local insights you can trust.</p>
-                    <a href="#contact" class="btn">Be part of the Pilot</a>
+                    <h1>I Love Moving. You Don't Have To.</h1>
+                    <p>Most people hate moving. I love it. Let me handle the parts you dread - from apartment hunting to unpacking and organizing your new home in Ningbo.</p>
+                    <a href="#contact" class="btn">Let's Chat About Your Move</a>
                 </div>
                 <div class="hero-image">
                     <img src="Nest-Headline.jpg" alt="Nest welcome image">
@@ -773,16 +678,19 @@
 
     <!-- About Section -->
     <section class="about" id="about">
-    <div class="container">
-        <div class="about-layout">
-            <div class="about-image">
-                <img src="family-photo.jpg" alt="Family in Ningbo">
-            </div>
+        <div class="container">
+            <div class="about-layout">
+                <div class="about-image">
+                    <img src="family-photo.jpg" alt="Ngaire and family in Ningbo">
+                </div>
                 <div class="about-text">
-                    <h2>Why Nest?</h2>
-                    <p>We’ve lived the expat experience ourselves — the excitement, the culture shock, and the endless trial-and-error of figuring things out. We built Nest because we wished something like this had existed when we first arrived.</p>
-                    <p><strong>In China, so much can feel transactional. Nest is different — we put people first. You can find all this information on your own, but we make it easier, smoother, and more reliable.</p>
-                    <a href="#services" class="btn">Explore Our Services</a>
+                    <h2>Why I Do This</h2>
+                    <p>Hi, I'm Ngaire. I moved to Ningbo in 2022 with my husband and two young sons.</p>
+                    <p>Here's what makes me a bit unusual: I actually love the things most people hate about moving. Apartment hunting? I find it exciting. Unpacking boxes? Therapeutic. Organizing spaces? My idea of a good time.</p>
+                    <p>I spent years managing complex software projects, which taught me how to break overwhelming tasks into manageable pieces. Turns out that skill translates perfectly to helping people move and organize their homes.</p>
+                    <p>I have a part-time job that's my main priority, but I genuinely love helping people with moving and organizing projects. There's something incredibly satisfying about finding someone the right apartment, then helping them unpack and create a space where everything actually works.</p>
+                    <p>If you're dreading your move or drowning in boxes - let me help. This is the stuff I enjoy.</p>
+                    <a href="#services" class="btn">How Can I Help?</a>
                 </div>
             </div>
         </div>
@@ -792,295 +700,204 @@
     <section class="services" id="services">
         <div class="container">
             <div class="services-intro">
-                <h2>Monthly Membership Services</h2>
-                <p>As a Nest member, you'll have access to all these essential services to help you settle in and thrive in Ningbo</p>
+                <h2>How I Can Help</h2>
             </div>
         
             <div class="services-grid">
-
-                 <div class="service-card">
-                   <i class="fa-solid fa-plane-arrival service-icon"></i>
-                    <h3>Pre-Arrival Support</h3>
-                    <p>It’s hard to know what life in Ningbo is really like until you’re here. Our pre-arrival support will answer any questions you have and those you don’t know to ask — so you can land prepared, not guessing.</p>
+                <div class="service-card">
+                    <i class="fa-solid fa-house-circle-check service-icon"></i>
+                    <h3>Finding Your Nest</h3>
+                    <p>Most people dread apartment hunting. I love it - the search, the negotiations, making sure you get the right place. I'll do the heavy lifting: searching online, vetting apartments, visiting places before you waste your time. Then I'll go with you to viewings, help with contracts, and get you moved in properly.</p>
+                    <h4>What's included:</h4>
+                    <ul class="service-list">
+                        <li>Online search & agent communication</li>
+                        <li>Pre-screening apartments (I only show you the good ones)</li>
+                        <li>Accompanied viewings</li>
+                        <li>Lease review and contract support</li>
+                        <li>Police registration, fapiao setup, internet installation</li>
+                        <li>Moving coordination or hands-on help</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem;"><strong>Investment:</strong> ¥800-1,200 per project</p>
                 </div>
                 
                 <div class="service-card">
-                    <i class="fa-solid fa-mountain-city service-icon"></i>
-                    <h3>City Tours & Orientation</h3>
-                    <p>Personalized tours of supermarkets, pharmacies, the best restaurants and essential stores so you can find those everyday things, easily.</p>
+                    <i class="fa-solid fa-boxes-packing service-icon"></i>
+                    <h3>Creating Your Home</h3>
+                    <p>Unpacking boxes and creating an organized, functional home is my happy place. I use my project management background to tackle one room at a time - decluttering, organizing, setting up systems that work for how you actually live. No judgment, just practical solutions.</p>
+                    <h4>What's included:</h4>
+                    <ul class="service-list">
+                        <li>Full room organization (kitchen, bedroom, kids' rooms, etc.)</li>
+                        <li>Unpacking & setup for new arrivals</li>
+                        <li>Storage solutions (using what you have or budget-friendly finds)</li>
+                        <li>Cleaning & tidying as we organize</li>
+                        <li>Systems that work for your lifestyle (and your ayi's!)</li>
+                        <li>Follow-up to adjust anything that's not working</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem;"><strong>Investment:</strong> ¥150/hour (most rooms: ¥450-600)</p>
                 </div>
-                
-                <div class="service-card">
-                       <i class="fa-solid fa-signs-post service-icon"></i>
-                    <h3>Local Services Directory</h3>
-                    <p>Looking for a pilates studio, kids' activity, hair salon, or restaurant? We'll find it, check it's trustworthy, and make the call for you - whether you need to book a table, schedule an appointment, arrange a trial lesson, or just ask if they have what you're looking for.</p>
-                </div>
-                
-                <div class="service-card">
-                  <i class="fa-solid fa-house service-icon"></i>
-                    <h3>Finding a Home</h3>
-                    <p>Support finding your home to nest in. Including bilingual assistance reviewing leases, police registration of new addess, getting the invoice and setting up internet.</p>
-                </div>
-
-                  <div class="service-card">
-                    <i class="fa-solid fa-truck-ramp-box service-icon"></i>
-                    <h3>Moving Support</h3>
-                    <p>Whether tracking a shipment or finding a trustworthy local moving service or finding a shifu (master) to help paint a room, we can help you create a space that feels like home.</p>
-                </div>
-                
-                <div class="service-card">
-                <i class="fa-brands fa-app-store-ios service-icon"></i>
-                    <h3>App Setup & Training</h3>
-                    <p>We'll help you set up and master essential Chinese apps - shopping, delivery, takeout, and second-hand marketplaces based on your interests.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fa-solid fa-user-doctor service-icon"></i>
-                    <h3>Healthcare Navigation</h3>
-                    <p>Hospital guidance, VIP service connections, and help setting up vaccination records for your children - healthcare made simple.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fa-solid fa-school-flag service-icon"></i>
-                    <h3>School & Education Options</h3>
-                    <p>Comprehensive guidance on international and bilingual schools, kindergartens, and educational opportunities in Ningbo.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fa-solid fa-car-side service-icon"></i>
-                    <h3>Driving License*</h3>
-                    <p>While taxis and drivers are convenient, there is nothing like the freedom of your own wheels. We'll help you get a tempory license or full license and connect you to car hire services or trusted car sellers.</p>
-                </div>
-            </div> <!-- End of services-grid -->
-            
-            <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--dark); font-style: italic; text-align: center;">
-                <strong>*Driving License Note:</strong> This service requires significant time investment. It's included free for annual members, with a ¥400 fee for monthly members to cover the additional support hours. </p>
-        </div> <!-- End of container -->
+            </div>
+        </div>
     </section>
 
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
-    <div class="container">
-        <div class="pricing-intro">
+        <div class="container">
             <h2>Simple, Transparent Pricing</h2>
-            <p>One membership. All the support you need to settle into Ningbo.</p>
-            <p><strong>Pilot members get their first week free, then 150 RMB/month or 1200 RMB/year</strong></p>
-        </div>
-        
-        <div class="pricing-content">
-            <div class="pricing-header">
-                <div class="pricing-rate">¥150/Month or ¥1200/Year</div>
-                <p style="font-size: 1.1rem; color: var(--dark); margin-top: 1rem;">Access to all our essential settlement services</p>
-            </div>
-            
-            <div class="pricing-highlight">
-                <p>Pre-Arrival Support • City tours • Local services • Home finding • App setup • Healthcare navigation • School guidance • Pet support • Driving license</p>
-            </div>
-            
-            <div class="pricing-actions">
-                <a href="#contact" class="btn">Join the Pilot - First Week Free</a>
-            </div>
-            
-            <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--accent);">
-                <h3 style="margin-bottom: 1rem;">Need Something More?</h3>
-                <p style="margin-bottom: 1.5rem;">We offer additional services beyond membership for those one-off needs.</p>
-                <button class="show-details-btn">
-                    <span>View Additional Services</span>
-                    <span class="details-icon">▼</span>
-                </button>
-            </div>
-            
-            <div class="pricing-details">
-                <h4>Additional Services (Available to Everyone):</h4>
-                <ul>
-                    <li><strong>Visitor Support:</strong> Family or friends coming to visit? We can help with airport pickups, police station registration, itinerary planning, and making sure they have a great time in Ningbo.</li>                    <li><strong>Culture and Foodie City tours:</strong> Have visitors coming and want to show them the histortic Ningbo or the best food in the city? Leave it with us to help!</li>
-                    <li><strong>DIY Home Services:</strong> Painting, picture hanging, furniture assembly, and minor repairs by trusted local professionals</li>
-                    <li><strong>Chinese Language Lessons:</strong> One-on-one or small group lessons with experienced teachers - tailored to your needs and schedule</li>
-                    <li><strong>Deep Cleaning & Organization:</strong> Professional organizing and cleaning services for your home or specific rooms</li>
-                    <li><strong>Translation Services:</strong> Document translation, interpretation for appointments, or help with official paperwork</li>
-                    <li><strong>Event Planning:</strong> Birthday parties, cultural celebrations, or social gatherings with local flair</li>
-                </ul>
+            <div class="pricing-content">
+                <div class="pricing-grid">
+                    <div class="pricing-item">
+                        <h3>Apartment Search & Move-in</h3>
+                        <div class="price">¥500-1,500</div>
+                        <p>Search, viewings, contract, move coordination, internet, rent fapiao collection</p>
+                    </div>
+                    
+                    <div class="pricing-item">
+                        <h3>Home Organization</h3>
+                        <div class="price">¥100/hour</div>
+                        <p>Most rooms: ¥400-600</p>
+                    </div>
                 
-                <p style="margin-top: 1.5rem;"><em>Contact us for pricing on additional services.</em></p>
+                </div>
+                
+                <div class="pricing-cta">
+                    <p style="text-align: center; font-style: italic; color: var(--dark);">Get in touch and we'll figure out exactly what makes sense for your situation</p>
+                </div>
             </div>
         </div>
-    </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="FAQ" id="FAQ">
         <div class="container">
             <h2>Frequently Asked Questions</h2>
-            <p style="margin-bottom: 3rem;">Everything you need to know about Nest and settling into Ningbo</p>
+            <p style="margin-bottom: 3rem;">Everything you need to know about working with me</p>
             
             <div class="faq-container">
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        What exactly is included in the monthly membership?
+                        What exactly do you help with?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Your monthly membership gives you access to our core settlement services: pre-arrival support, city tours, local services recommendations, finding a home, app setup, hospital navigation, schooling guidance, WeChat groups access, and moving support. Think of us as your on-call concierge team for anything related to settling into Ningbo life.</p>
+                        <p>Finding apartments, moving (coordinating or hands-on help), unpacking, and organizing homes. Basically the entire moving process that most people dread but I genuinely enjoy.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        Do I need to speak Chinese to use your services?
+                        Is this a formal business?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Not at all! That's the whole point of Nest. Our team is fully bilingual and can help bridge the language gap whether you're just starting to learn Chinese or don't speak any at all. We can accompany you to appointments, help with translations, and make sure you understand everything clearly.</p>
+                        <p>No, - I have some other priorities, but I love helping people with moving and organizing projects, so I do this when it works for both of us.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        Do I need to speak English to use your services?
+                        How do I know if my space is too messy?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Not at all! While we primarily work in English and Chinese, we're here to help you settle in no matter what language you speak. We're happy to use translation apps to communicate with you, and we can connect you with expat communities who speak your language. Making you feel at home is what matters most to us!</p>
+                        <p>It's not. I've seen it all and there's zero judgment. Chaos is just life, especially when you're moving or settling in.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        How quickly can you help me get set up?
+                        How quickly can you help me?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>It depends on what you need! Some services like app setup or connecting you to WeChat groups can happen within a day. For more involved services like finding a home and everything associated with this, we'll work at your pace. We've found it takes up to 6 months to feel at home in a foreign country.</p>
+                        <p>Organizing sessions usually within a week. Apartment searches take 2-4 weeks. Moving coordination depends on your timeline.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        What if I only need a few specific services?
+                        Why are you good at this?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>We offer both monthly memberships and à la carte services. If you just need help with one or two things - like Chinese lessons or a one-time home organizing session - you can book those individually. However, most expats find the monthly membership valuable because new questions and needs pop up constantly during the settlement process.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        Can you help with visa and work permit issues?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Unfortunately we can't provide legal advice or process visas ourselves, but we can accompany you to appointments if language support would be helpful.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        Do you only work with families or can single expats join too?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Nest is for anyone settling into Ningbo! Whether you're a single professional, a couple, a family with kids, or retirees, we tailor our services to your specific situation and needs. Everyone deserves support when moving to a new country.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        What makes Nest different from other relocation services?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We're locals who've been through the expat experience ourselves. We're not just sending you links and documents - we're actually walking through the supermarket with you, sitting with you at the hospital, and teaching you how to use the apps yourself so you become independent. We focus on empowerment, not just service delivery. Plus, our 'unlimited support' model means we're here for all those unexpected questions that come up after you've "officially" settled in.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        How do I get started?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Simply reach out to us through WeChat or email! We'll schedule a quick consultation (free!) to understand your situation, what you need help with, and how we can best support you. From there, we can get you signed up and start helping you settle in right away.</p>
+                        <p>I genuinely love the moving process - from finding the right place to organizing the final drawer. Plus I have project management experience that makes me efficient at breaking down overwhelming tasks. And I know Ningbo well after multiple moves here.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-   <!-- Contact Section -->
-<section class="about" id="contact">
-    <div class="container">
-        <div class="about-text" style="max-width: 600px; margin: 0 auto;">
-            <h2>Ready to Settle Into Ningbo?</h2>
-            <p>We're here to make your transition to Ningbo as smooth and stress-free as possible. Fill out the form below and we'll get back to you within 24 hours!</p>
-            
-            <form name="contact" method="POST" data-netlify="true" style="max-width: 500px; margin-top: 2rem;">
-                <input type="hidden" name="form-name" value="contact">
+    <!-- Contact Section -->
+    <section class="about" id="contact">
+        <div class="container">
+            <div class="about-text" style="max-width: 600px; margin: 0 auto;">
+                <h2>Ready to Get Started?</h2>
+                <p>Let's make your move either to Ningbo or around Ningbo as smooth as possible. Fill out the form below and I'll get back to you within 24 hours!</p>
                 
-                <div style="margin-bottom: 1rem;">
-                    <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary);">Name *</label>
-                    <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--accent); border-radius: 5px; font-size: 1rem;">
-                </div>
-                
-                <div style="margin-bottom: 1rem;">
-                    <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary);">Email *</label>
-                    <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--accent); border-radius: 5px; font-size: 1rem;">
-                </div>
-                
-                <div style="margin-bottom: 1rem;">
-                    <label for="wechat" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary);">WeChat ID</label>
-                    <input type="text" id="wechat" name="wechat" style="width: 100%; padding: 0.75rem; border: 2px solid var(--accent); border-radius: 5px; font-size: 1rem;">
-                </div>
-                
-                <div style="margin-bottom: 1.5rem;">
-                    <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary);">Are you living in Ningbo yet? *</label>
-                    <div style="display: flex; gap: 1.5rem;">
-                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                            <input type="radio" name="in-ningbo" value="yes" required style="width: 18px; height: 18px; cursor: pointer;">
-                            <span>Yes</span>
-                        </label>
-                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                            <input type="radio" name="in-ningbo" value="no" required style="width: 18px; height: 18px; cursor: pointer;">
-                            <span>No, arriving soon</span>
-                        </label>
+                <form name="contact" method="POST" data-netlify="true" style="max-width: 500px; margin-top: 2rem;">
+                    <input type="hidden" name="form-name" value="contact">
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary);">Name *</label>
+                        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--accent); border-radius: 5px; font-size: 1rem;">
                     </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary);">Email *</label>
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--accent); border-radius: 5px; font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="wechat" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary);">WeChat ID</label>
+                        <input type="text" id="wechat" name="wechat" style="width: 100%; padding: 0.75rem; border: 2px solid var(--accent); border-radius: 5px; font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--primary);">Are you living in Ningbo yet? *</label>
+                        <div style="display: flex; gap: 1.5rem;">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="in-ningbo" value="yes" required style="width: 18px; height: 18px; cursor: pointer;">
+                                <span>Yes</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="in-ningbo" value="no" required style="width: 18px; height: 18px; cursor: pointer;">
+                                <span>No, arriving soon</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; cursor: pointer;">Send Message</button>
+                </form>
+
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--accent); text-align: center;">
+                    <p style="font-weight: bold; color: var(--primary); margin-bottom: 1rem;">Follow us on RedNote</p>
+                    <a href="https://www.xiaohongshu.com/user/profile/66f3a21a000000001d022b4d" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--primary); font-size: 1.1rem; transition: all 0.3s ease;">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2C8.3 2 2 8.3 2 16s6.3 14 14 14 14-6.3 14-14S23.7 2 16 2zm7.5 9.5l-2 7c-.2.6-.6 1-1.2 1.2l-7 2c-.6.2-1.3-.2-1.5-.8-.2-.6.2-1.3.8-1.5l6.4-1.8 1.8-6.4c.2-.6.9-1 1.5-.8.6.2 1 .9.8 1.5zm-11 11c-.6.2-1.3-.2-1.5-.8l-2-7c-.2-.6.2-1.3.8-1.5l7-2c.6-.2 1.3.2 1.5.8.2.6-.2 1.3-.8 1.5l-6.4 1.8-1.8 6.4c-.2.6-.9 1-1.5.8z"/>
+                        </svg>
+                        <span>@Nest_Ningbo</span>
+                    </a>
                 </div>
-                
-                <button type="submit" class="btn" style="width: 100%; cursor: pointer;">Send Message</button>
-            </form>
 
-            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--accent); text-align: center;">
-                <p style="font-weight: bold; color: var(--primary); margin-bottom: 1rem;">Follow us on RedNote</p>
-                <a href="https://www.xiaohongshu.com/user/profile/66f3a21a000000001d022b4d" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--primary); font-size: 1.1rem; transition: all 0.3s ease;">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
-            <path d="M16 2C8.3 2 2 8.3 2 16s6.3 14 14 14 14-6.3 14-14S23.7 2 16 2zm7.5 9.5l-2 7c-.2.6-.6 1-1.2 1.2l-7 2c-.6.2-1.3-.2-1.5-.8-.2-.6.2-1.3.8-1.5l6.4-1.8 1.8-6.4c.2-.6.9-1 1.5-.8.6.2 1 .9.8 1.5zm-11 11c-.6.2-1.3-.2-1.5-.8l-2-7c-.2-.6.2-1.3.8-1.5l7-2c.6-.2 1.3.2 1.5.8.2.6-.2 1.3-.8 1.5l-6.4 1.8-1.8 6.4c-.2.6-.9 1-1.5.8z"/>
-        </svg>
-        <span>@Nest_Ningbo</span>
-    </a>
-</div>
-
-<p style="margin-top: 2rem; font-size: 0.9rem; color: var(--dark);">
-            
-            <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--dark);">
-                <strong>Location:</strong> Ningbo, Zhejiang Province
-            </p>
+                <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--dark);">
+                    <strong>Location:</strong> Ningbo, Zhejiang Province
+                </p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container footer-content">
             <div class="footer-logo">
-        <img src="nest-logo.png" alt="Nest Logo" style="width: 150px; height: auto; filter: brightness(0) invert(1);">
-        <p>Making Ningbo feel like home for expats, one family at a time.</p>
-        </div>
+                <img src="nest-logo.png" alt="Nest Logo" style="width: 150px; height: auto; filter: brightness(0) invert(1);">
+                <p>Helping expats in Ningbo with the moving process they dread.</p>
+            </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#pricing">Membership</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#FAQ">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -1193,28 +1010,6 @@
             serviceCards.forEach(card => {
                 observer.observe(card);
             });
-        });
-        
-        // Pricing details toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const showDetailsBtn = document.querySelector('.show-details-btn');
-            const pricingDetails = document.querySelector('.pricing-details');
-            
-            if (showDetailsBtn && pricingDetails) {
-                showDetailsBtn.addEventListener('click', function() {
-                    const isExpanded = pricingDetails.classList.contains('expanded');
-                    
-                    if (isExpanded) {
-                        pricingDetails.classList.remove('expanded');
-                        showDetailsBtn.classList.remove('expanded');
-                        showDetailsBtn.querySelector('span:first-child').textContent = 'View Additional Services';
-                    } else {
-                        pricingDetails.classList.add('expanded');
-                        showDetailsBtn.classList.add('expanded');
-                        showDetailsBtn.querySelector('span:first-child').textContent = 'Hide Additional Services';
-                    }
-                });
-            }
         });
     </script>
 </body>
