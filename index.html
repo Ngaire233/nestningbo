@@ -659,8 +659,7 @@
             background: white;
             transform: scale(1.2);
         }
-        /* Mobile Responsive */
-       /* Mobile Responsive */
+      /* Mobile Responsive */
 @media (max-width: 768px) {
     .logo a img {
         width: 140px;
@@ -687,13 +686,24 @@
     .hero-image {
         order: -1;
         flex: none;
-        max-width: 250px;
+        width: 100%;
+        max-width: 100%;
         margin: 0 auto;
     }
     
     /* Carousel mobile styles */
+    .carousel {
+        width: 100%;
+    }
+    
     .carousel-inner {
-        height: 250px;
+        height: 300px;
+        width: 100%;
+    }
+    
+    .carousel-item {
+        width: 100%;
+        height: 100%;
     }
     
     .carousel-control {
