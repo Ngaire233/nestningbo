@@ -660,77 +660,76 @@
             transform: scale(1.2);
         }
         /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .logo a img {
-                width: 140px;
-            }
-            
-            header.shrunk {
-                padding: 0.25rem 0;
-            }
-            
-            header.shrunk .logo a img {
-                width: 80px;
-            }
-            
-            header.shrunk .hamburger span {
-                width: 22px;
-                height: 2px;
-            }
-            
-            .hero-layout {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            
-            .hero-image {
-                order: -1;
-                flex: none;
-                max-width: 250px;
-                margin: 0 auto;
-            }
-             @media (max-width: 768px) {
-            
-            /* ADD these carousel mobile styles: */
-            .carousel-inner {
-                height: 250px;
-            }
-            
-            .carousel-control {
-                font-size: 1.5rem;
-                padding: 5px 10px;
-            }
-        }
-            
-            .about-layout {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            
-            .about-image {
-                flex: none;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-content {
-                padding: 2rem;
-                margin: 0 1rem;
-            }
-            
-            .faq-question {
-                padding: 20px;
-                font-size: 1rem;
-            }
-        }
+       /* Mobile Responsive */
+@media (max-width: 768px) {
+    .logo a img {
+        width: 140px;
+    }
+    
+    header.shrunk {
+        padding: 0.25rem 0;
+    }
+    
+    header.shrunk .logo a img {
+        width: 80px;
+    }
+    
+    header.shrunk .hamburger span {
+        width: 22px;
+        height: 2px;
+    }
+    
+    .hero-layout {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .hero-image {
+        order: -1;
+        flex: none;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    /* Carousel mobile styles */
+    .carousel-inner {
+        height: 250px;
+    }
+    
+    .carousel-control {
+        font-size: 1.5rem;
+        padding: 5px 10px;
+    }
+    
+    .about-layout {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .about-image {
+        flex: none;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-content {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .faq-question {
+        padding: 20px;
+        font-size: 1rem;
+    }
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -772,17 +771,17 @@
                 <div class="hero-image">
                 <div class="carousel">
                     <div class="carousel-inner">
+                         <div class="carousel-item">
+                            <img src="me-boxes.jpg" alt="Moving and organizing">
+                        </div>
                         <div class="carousel-item active">
-                            <img src="landing-image.jpeg" alt="Our bike room">
+                            <img src="landing-image.jpg" alt="Our bike room">
                         </div>
                         <div class="carousel-item">
                             <img src="bedroom.jpg" alt="Organized bedroom">
                         </div>
                         <div class="carousel-item">
                             <img src="livingroom.jpg" alt="Organized living room">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="me-boxes.jpg" alt="Moving and organizing">
                         </div>
                     </div>
                     <button class="carousel-control prev" onclick="moveCarousel(-1)">‹</button>
